@@ -11,7 +11,7 @@
 
     <FrameLayout
         android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:layout_height="450px"
         android:background="#40b883">
 
         <FrameLayout

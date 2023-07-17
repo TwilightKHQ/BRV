@@ -12,18 +12,20 @@ class StaggeredDividerFragment :
     BaseDividerFragment<FragmentStaggeredDividerBinding>(R.layout.fragment_staggered_divider) {
 
     override fun initView() {
-        binding.rv.staggered(3, RecyclerView.VERTICAL).divider {
-            setDrawable(R.drawable.divider_horizontal)
-            // includeVisible = true
-        }.setup {
-            addType<DividerModel>(R.layout.item_divider_vertical)
-            onBind {
-                // 设置动态高度
-                val layoutParams = itemView.layoutParams
-                layoutParams.height = getModel<DividerModel>().height
-                itemView.layoutParams = layoutParams
+        binding.rv.staggered(3, RecyclerView.VERTICAL)
+            .divider {
+                setDrawable(R.drawable.divider_horizontal)
+                // includeVisible = true
             }
-        }.models = getData()
+            .setup {
+                addType<DividerModel>(R.layout.item_divider_vertical)
+//            onBind {
+//                // 设置动态高度
+//                val layoutParams = itemView.layoutParams
+//                layoutParams.height = getModel<DividerModel>().height
+//                itemView.layoutParams = layoutParams
+//            }
+            }.models = getData()
     }
 
     private fun getData(): List<Any> {
